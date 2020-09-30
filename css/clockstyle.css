@@ -1,1 +1,66 @@
- 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+}
+
+.container-conteudo {
+    background-color: tomato;
+    width: 80%;
+    height: 80vh;
+}
+
+footer {
+    display: flex;
+    align-items: center; /* Alinha os itens vertical */
+    justify-content: space-evenly; /* Distribui os elementos na vertical com espaçamento */
+    height: 40px;
+    background-color: #333333;
+}
+
+/* Elementos dos contêineres*/
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espaçamento entre os links*/
+    background-color: aqua;
+}
+
+nav a {
+    background: red;
+    flex-grow: 1; /* Preenche o máximo de espaço possível*/
+    text-align: center;
+    padding: 20px 0 20px 0;
+    border: 5px solid white;
+    border-collapse: collapse;
+}
+
+nav a:hover {
+    background-color: green;
+}
+
+/* --- Fazendo o conteúdo ficar oculto --- */
+.container-conteudo div {
+    background-color: blueviolet;
+    padding: 20px;
+    display: none;
+}
+
+/* --- Mostrando o conteúdo quando clicar no link da aba*/
+.container-conteudo div:target {
+    display: block;
+}
