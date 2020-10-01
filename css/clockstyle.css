@@ -49,8 +49,16 @@ nav a {
     border-collapse: collapse;
 }
 
+/*Efeito ao passar o mouse */
 nav a:hover {
     background-color: green;
+}
+
+/* Muda a cor ao clicar, vai ser usado para deixar a aba selecionada 
+por isso a criação da classe .aplicaFocus*/
+nav a.mudafocus,
+nav a:focus {
+    background-color: aqua;
 }
 
 /* --- Fazendo o conteúdo ficar oculto --- */
