@@ -33,6 +33,11 @@ footer {
 
 /* Elementos dos contêineres*/
 
+h1 {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -62,13 +67,29 @@ nav a:focus {
 }
 
 /* --- Fazendo o conteúdo ficar oculto --- */
-.container-conteudo div {
-    background-color: blueviolet;
+.container-conteudo .aba {
     padding: 20px;
     display: none;
 }
 
 /* --- Mostrando o conteúdo quando clicar no link da aba*/
-.container-conteudo div:target {
-    display: block;
+.container-conteudo .aba:target {
+    display: flex;
+    background-color: aqua;
+    height: 70%;
+}
+
+
+#digital {
+    align-items: center;
+    justify-content: center; 
+    font-size: 10vw;
+    color: #00ff00;
+    background: #111111;
+}
+
+section {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
 }
