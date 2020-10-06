@@ -1,0 +1,47 @@
+#analog-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Define o tamanho e a forma do relógio --- */
+.analog {
+    width: 70%;
+    height: 90%;
+    background-color: rgb(5, 94, 27);
+    border-radius: 50%;
+    position: relative;
+}
+
+/* --- Aplicando nas div's horas, minutos e segundos (que representa os ponteiros).
+       Deixando absolute para as divs ficarem em cima da div analog (que representa 
+       o circulo do relógio).
+       
+       Como movo todas as divs 50% com translateX eu alinho elas umas sobre as outras
+       ---*/
+.clock-analog {
+    position: absolute; 
+    left: 50%;      /*Move para a metade horizontal eixo(x) da div .analog do relogio*/
+    top: 50%;       /*Move para a metada vertical eixo(y) da div .analog do relogio*/
+    transform: translateX(-50%);
+}
+
+
+/* --- Estilo dos ponteiros --- */
+.hor-analog {
+    width: 10px;
+    height: 35%;
+    background-color: rgb(255, 230, 0);
+}
+
+.min-analog {
+    width:5px;
+    height: 45%;
+    background-color: #ff0000;
+}
+
+.seg-analog {
+    width:2px;
+    height: 48%;
+    background-color:blue;
+}

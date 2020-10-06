@@ -19,8 +19,8 @@ main {
 
 .container-conteudo {
     background-color: tomato;
-    width: 80%;
-    height: 80vh;
+    width: 60%;
+    height: 70vh;
 }
 
 footer {
@@ -69,21 +69,23 @@ nav a:focus {
 /* --- Fazendo o conteúdo ficar oculto --- */
 .container-conteudo .aba{
     display: none;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* --- Mostrando o conteúdo quando clicar no link da aba*/
 .container-conteudo .aba:target {
     display: flex;
     background-color: aqua;
-    height: 70%;
+    justify-content: center; 
+    height:70%;
 }
 
 /* --- Seções de cada relógio --- */
 section {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
+    width: 50%;
     border: 1px solid #333333;
 }
 
@@ -91,7 +93,7 @@ section {
 #section-digital {
     align-items: center;
     justify-content: center; 
-    font-size: 9vw;
+    font-size: 6vh;
     color: #00ff00;
     background-color: #333333;
 }
