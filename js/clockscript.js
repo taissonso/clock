@@ -40,7 +40,7 @@
   * - Depois da função chama uma variável com setInterval para ficar atualizando.
   */
  function relogioDigital() {
- 	var ondeEscrever = document.getElementById('digital');
+ 	var ondeEscrever = document.querySelector('section h1');
 						
  	var data = new Date();
  	var hor = data.getHours();
@@ -55,9 +55,3 @@
 	ondeEscrever.innerHTML = horasCompleta;	
  }
  var tempo = setInterval(relogioDigital, 1000);
-
- /**
-  * --- Cronômetro --- 
-  * 
-  * 
-  */

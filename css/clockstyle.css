@@ -67,9 +67,9 @@ nav a:focus {
 }
 
 /* --- Fazendo o conteúdo ficar oculto --- */
-.container-conteudo .aba {
-    padding: 20px;
+.container-conteudo .aba{
     display: none;
+    padding: 20px;
 }
 
 /* --- Mostrando o conteúdo quando clicar no link da aba*/
@@ -79,17 +79,66 @@ nav a:focus {
     height: 70%;
 }
 
-
-#digital {
-    align-items: center;
-    justify-content: center; 
-    font-size: 10vw;
-    color: #00ff00;
-    background: #111111;
+/* --- Seções de cada relógio --- */
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #333333;
 }
 
-section {
-    border: 1px solid black;
+
+#section-digital {
+    align-items: center;
+    justify-content: center; 
+    font-size: 9vw;
+    color: #00ff00;
+    background-color: #333333;
+}
+
+#stopwatch-section , #timer-section {
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Botões de cada relógio --- */
+.botoes {
+    background-color: red;
+}
+
+/* --- input's e labels do timer --- */
+#entrada-timer, #timer-labels {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
+    background-color: #00ff00;
+}
+
+#entrada-timer input {
+    width: 10%;
+    height: 30px;
+    text-align: center;
+    margin-left: 5px;
+    box-sizing: border-box;
+}
+
+#timer-labels label { 
+    width: 10%;
+    text-align: center;
+    margin-left: 5px;
+}
+
+/* --- Span de erro do timer--- */
+#error-timer {
+    visibility: hidden;
+    color: rgb(255, 0, 0);
+    text-align: center;
+}
+
+/* --- H2 timer --- */
+#timer-tempo {
+    display: none;
+    text-align: center;
 }

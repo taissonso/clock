@@ -4,38 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watches</title>
+    <title>Clocks</title>
     <link rel="stylesheet" href="css/clockstyle.css">
 </head>
 
-<body>  
+<body>
     <main>
         <div class="container-conteudo">
-            <h1>Watches</h1>
+            <h1>Clocks</h1>
             <nav>
                 <a href="#digital">Digital</a>
                 <a href="#stopwatch">Stopwatch</a>
-                <a href="#aba3">Link 3</a>
-                <a href="#aba4">Link 4</a>
+                <a href="#timer">Timer</a>
+                <a href="#analog">Analog</a>
             </nav>
-            <div class="aba" id="digital"></div>
-            <div class="aba" id="stopwatch"></div>
-            <div class="aba" id="aba3">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum ipsam dignissimos maxime
-                    perferendis quis soluta sunt ea. Necessitatibus molestiae eveniet autem nostrum suscipit nihil sit
-                    veritatis dicta hic id est, accusantium voluptatibus quibusdam soluta qui velit magni consequatur
-                    saepe iure rem earum ut repellat. Dolore accusamus beatae quas quibusdam.</p>
+            <div class="aba" id="digital">
+                <section id="section-digital">
+                    <h1></h1>
+                </section>
             </div>
-            <div class="aba" id="aba4">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, labore incidunt modi corrupti
-                    illo qui error officia nostrum? Similique rerum eius blanditiis cumque expedita, officiis molestiae
-                    aliquid fugit eveniet ullam est earum iusto deleniti quibusdam quisquam alias repellendus officia
-                    reiciendis assumenda consequatur omnis minus laudantium adipisci magnam! Omnis unde distinctio amet
-                    laborum excepturi maiores voluptas adipisci? Tempore, omnis et explicabo numquam, quisquam dicta
-                    natus odio blanditiis ducimus cupiditate inventore reprehenderit. Amet saepe necessitatibus pariatur
-                    nisi quasi explicabo aliquid, dolorem ipsa ratione beatae vitae fuga eos dolorum quo earum, officiis
-                    sit veniam hic. Voluptates suscipit ullam, similique molestias beatae molestiae maxime?</p>
+            <div class="aba" id="stopwatch">
+                <section id="stopwatch-section">
+                    <h2 id="tempo">00:00:00.00</h2>
+                    <div class="botoes">
+                        <input type="button" id="btn-stopwatch-start" value="Start">
+                        <input type="button" id="btn-stopwatch-pause" value="Pause">
+                        <input type="button" id="btn-stopwatch-stop" value="Stop">
+                    </div>
+                </section>
             </div>
+            <div class="aba" id="timer">
+                <section id="timer-section">
+                    <h2 id="timer-tempo"></h2>
+                    <div id="timer-labels">
+                        <label for="timer-horas">Hours</label>
+                        <label for="timer-minutos">Minutes</label>
+                        <label for="timer-segundos">Seconds</label>
+                    </div>
+                    <div id="entrada-timer" class="entrada-timer">
+                        <input type="text" id="timer-horas" placeholder="00º" maxlength="4" autocomplete="off">
+                        <input type="text" id="timer-minutos" placeholder="00'" maxlength="2" autocomplete="off">
+                        <input type="text" id="timer-segundos" placeholder="00''" maxlength="2" autocomplete="off">
+                    </div>
+                    <span id="error-timer">ERRO</span>
+                    <div class="botoes">
+                        <input type="button" value="Start" id="btn-timer-start">
+                        <input type="button" value="Pause" id="btn-timer-pause">
+                        <input type="button" value="Stop" id="btn-timer-stop">
+                    </div>
+                </section>
+            </div>
+            <div class="aba" id="analog">
+                <section id="analog-section">
+
+                </section>
         </div>
     </main>
     <footer>
@@ -52,6 +74,7 @@
     </footer>
     <script src="js/clockscript.js"></script>
     <script src="js/cronometro.js"></script>
+    <script src="js/timer.js"></script>
 </body>
 
 </html>
