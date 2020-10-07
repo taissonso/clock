@@ -14,7 +14,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: blue;
+    background-color: rgb(185, 185, 185)e;
 }
 
 .container-conteudo {
@@ -36,6 +36,7 @@ footer {
 h1 {
     text-align: center;
     padding: 10px 0 10px 0;
+    color:
 }
 
 nav {
