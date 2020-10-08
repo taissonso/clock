@@ -1,7 +1,7 @@
 /**Pega os botões pelo ID */
-var startStopwatch = document.getElementById('btn-stopwatch-start'); 
-var pauseStopwatch = document.getElementById('btn-stopwatch-pause'); 
-var stopStopwatch = document.getElementById('btn-stopwatch-stop'); 
+var startStopwatch = document.getElementById('btn-stopwatch-start');
+var pauseStopwatch = document.getElementById('btn-stopwatch-pause');
+var stopStopwatch = document.getElementById('btn-stopwatch-stop');
 
 /** --- Define as variáveis para usar no cronômetro --- */
 var hor = 0,
@@ -20,41 +20,38 @@ stopStopwatch.style.display = 'none';
  *  - Formata o cronômetro para mostrar zeros a esquerda caso o número seja menor que 10 (Usa if ternário!).
  parar
  */
-startStopwatch.addEventListener('click', ()=> {
+startStopwatch.addEventListener('click', () => {
     startStopwatch.style.display = 'none';
-    pauseStopwatch.style.display = 'inline-block';
-    stopStopwatch.style.display = 'inline-block';
+    pauseStopwatch.style.display = 'flex';
+    stopStopwatch.style.display = 'flex';
 
     tempo = setInterval(() => {
         var formato;
-        mil++;
-        if (mil == 100) {
-            mil = 0;
-            seg++;
-            if (seg == 60) {
-                seg = 0;
-                min++;
-                if (min == 60) {
-                    min = 0;
-                    hor++
-                }
+        seg++;
+        if (seg == 60) {
+            seg = 0;
+            min++;
+            if (min == 60) {
+                min = 0;
+                hor++
             }
         }
+
         formato = (hor < 10 ? "0" + hor : hor) + ":" + (min < 10 ? "0" + min : min) +
-         ":" + (seg < 10 ? "0" + seg : seg) + "." + (mil < 10 ? "0" + mil : mil);
+            ":" + (seg < 10 ? "0" + seg : seg);
         document.getElementById('tempo').innerHTML = formato;
-    }, 10);
+    }, 1000);
 });
 
 /** --- Pause ---
  *  - Para o tempo do cronômetro sem zerar os valores.
  *  - Oculta o botão pause. Renomeia o botão Start e mostra o botão Stop.
  */
-pauseStopwatch.addEventListener('click', ()=> {
+pauseStopwatch.addEventListener('click', () => {
     pauseStopwatch.style.display = 'none';
-    startStopwatch.setAttribute('value','Resume');
-    startStopwatch.style.display = 'inline-block';
-    stopStopwatch.style.display = 'inline-block';
+    document.getElementById('span-stopwatch-start').innerHTML = 'Resume';
+    startStopwatch.style.display = 'flex';
+    stopStopwatch.style.display = 'flex';
     clearInterval(tempo);
 });
 
@@ -66,11 +63,10 @@ stopStopwatch.addEventListener('click', () => {
     hor = 0;
     min = 0;
     seg = 0;
-    mil = 0;
-    document.getElementById('tempo').innerHTML = "00:00:00.00";
+    document.getElementById('tempo').innerHTML = "00:00:00";
     stopStopwatch.style.display = 'none';
     pauseStopwatch.style.display = 'none';
-    startStopwatch.setAttribute('value','Start');
-    startStopwatch.style.display = 'inline-block';
+    document.getElementById('span-stopwatch-start').innerHTML = 'Start';
+    startStopwatch.style.display = 'flex';
     clearInterval(tempo);
 });

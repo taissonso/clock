@@ -34,7 +34,7 @@ mins.addEventListener('keyup', function () {
     var minutos = mins.value;
     this.value = validarEntrada(minutos);
     if (this.value[0] > 5) {
-        this.value = "0" + this.value[0];
+        this.value = this.value[0];
     }
 });
 
@@ -44,7 +44,7 @@ segs.addEventListener('keyup', function () {
     var segundos = segs.value;
     this.value = validarEntrada(segundos);
     if (this.value[0] > 5) {
-        this.value = "0" + this.value[0];
+        this.value = this.value[0];
     }
 });
 
@@ -73,17 +73,17 @@ startTimer.addEventListener('click', () => {
         erroTimer.style.visibility = 'visible';
     } else {
         mostrarTimer.style.display = 'block';
-        document.getElementById('timer-labels').style.display = 'none';
-        document.getElementById('entrada-timer').style.display = 'none';
+        document.querySelector('.entrada-timer').style.display = 'none';
         startTimer.style.display = 'none';
-        pauseTimer.style.display = 'inline-block';
-        stopTimer.style.display = 'inline-block';
-        // erroTimer.style.display = 'none';
+        pauseTimer.style.display = 'flex';
+        stopTimer.style.display = 'flex';
 
         hors.value = (hors.value == '' ? 0 : hors.value);
         mins.value = (mins.value == '' ? 0 : mins.value);
         segs.value = (segs.value == '' ? 0 : segs.value);
 
+
+        
         formato = formataPadrao(hors.value, mins.value, segs.value);
         mostrarTimer.innerHTML = formato;
         
@@ -127,9 +127,9 @@ function formataPadrao(hora, minutos, segundos) {
  */
 pauseTimer.addEventListener('click', () => {
     pauseTimer.style.display = 'none';
-    startTimer.setAttribute('value', 'Resume');
-    startTimer.style.display = 'inline-block';
-    stopTimer.style.display = 'inline-block';
+    document.getElementById('span-timer-start').innerHTML = 'Resume';
+    startTimer.style.display = 'flex';
+    stopTimer.style.display = 'flex';
     clearInterval(tempoTimer);
 });
 
@@ -141,16 +141,14 @@ pauseTimer.addEventListener('click', () => {
  *  - Mostra o botão start e para o tempo. 
  */
 stopTimer.addEventListener('click', () => {
-    
     hors.value = '';
     mins.value = '';
     segs.value = '';
     mostrarTimer.style.display = 'none';
-    document.getElementById('timer-labels').style.display = 'flex';
-    document.getElementById('entrada-timer').style.display = 'flex';
+    document.querySelector('.entrada-timer').style.display = 'flex';
     stopTimer.style.display = 'none';
     pauseTimer.style.display = 'none';
-    startTimer.setAttribute('value','Start');
-    startTimer.style.display = 'inline-block';
+    document.getElementById('span-timer-start').innerHTML = 'Start';
+    startTimer.style.display = 'flex';
     clearInterval(tempoTimer);
 });

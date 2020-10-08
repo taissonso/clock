@@ -10,60 +10,98 @@
 </head>
 
 <body>
-    <main>
-        <div class="container-conteudo">
-            <h1>Clocks</h1>
-            <nav>
-                <a href="#digital">Digital</a>
-                <a href="#stopwatch">Stopwatch</a>
-                <a href="#timer">Timer</a>
-                <a href="#analog">Analog</a>
-            </nav>
-            <div class="aba" id="digital">
-                <section id="section-digital">
-                    <h1></h1>
-                </section>
+    <main class="container-conteudo">
+        <h1>Clocks</h1>
+        <nav>
+            <a href="#digital">Digital</a>
+            <a href="#stopwatch">Stopwatch</a>
+            <a href="#timer">Timer</a>
+            <a href="#analog">Analog</a>
+        </nav>
+        <section class="aba" id="digital">
+            <h2 id="hora-digital"></h2>
+        </section>
+        <section class="aba" id="stopwatch">
+            <h2 id="tempo">00:00:00</h2>
+            <div class="botoes">
+                <button class="btn-start" id="btn-stopwatch-start">
+                    <svg viewBox="0 0 163.861 163.861" class="btn-svg">
+                        <path
+                            d="M 34.857 3.613 C 20.084 -4.861 8.107 2.081 8.107 19.106 v 125.637 c 0 17.042 11.977 23.975 26.75 15.509 L 144.67 97.275 c 14.778 -8.477 14.778 -22.211 0 -30.686 L 34.857 3.613 Z" />
+                    </svg>
+                    <span class="btn-span" id="span-stopwatch-start">Start</span>
+                </button>
+                       
+                <button class="btn-pause" id="btn-stopwatch-pause">
+                    <svg viewBox="0 0 512 512" class="btn-svg">
+                        <path d="M181.333,0H74.667c-17.643,0-32,14.357-32,32v448c0,17.643,14.357,32,32,32h106.667c17.643,0,32-14.357,32-32V32
+                        C213.333,14.357,198.976,0,181.333,0z" />
+                        <path d="M437.333,0H330.667c-17.643,0-32,14.357-32,32v448c0,17.643,14.357,32,32,32h106.667c17.643,0,32-14.357,32-32V32
+                        C469.333,14.357,454.976,0,437.333,0z" />
+                    </svg>
+                    <span class="btn-span" id="span-stopwatch-pause">Pause</span>
+                </button>
+
+                <button class="btn-stop" id="btn-stopwatch-stop">
+                    <svg viewBox="0 0 33 33" class="btn-svg">
+                        <path d="M33,4.5v24c0,2.484-2.016,4.5-4.5,4.5h-24C2.016,33,0,30.984,0,28.5v-24C0,2.016,2.016,0,4.5,0h24
+                        C30.984,0,33,2.016,33,4.5z" />
+                    </svg>
+                    <span class="btn-span" id="span-stopwatch-stop">Stop</span>
+                </button>
             </div>
-            <div class="aba" id="stopwatch">
-                <section id="stopwatch-section">
-                    <h2 id="tempo">00:00:00.00</h2>
-                    <div class="botoes">
-                        <input type="button" id="btn-stopwatch-start" value="Start">
-                        <input type="button" id="btn-stopwatch-pause" value="Pause">
-                        <input type="button" id="btn-stopwatch-stop" value="Stop">
-                    </div>
-                </section>
+        </section>
+        <section class="aba" id="timer">
+            <h2 id="timer-tempo"></h2>
+            <div class="entrada-timer">
+                <div class="labels-inputs">
+                    <label for="timer-horas">Hours</label>
+                    <input type="text" id="timer-horas" placeholder="00º" maxlength="4" autocomplete="off">
+                </div>
+                <div class="labels-inputs">
+                    <label for="timer-minutos">Minutes</label>
+                    <input type="text" id="timer-minutos" placeholder="00'" maxlength="2" autocomplete="off">
+                </div>
+                <div class="labels-inputs">
+                    <label for="timer-segundos">Seconds</label>
+                    <input type="text" id="timer-segundos" placeholder="00''" maxlength="2" autocomplete="off">
+                </div>
             </div>
-            <div class="aba" id="timer">
-                <section id="timer-section">
-                    <h2 id="timer-tempo"></h2>
-                    <div id="timer-labels">
-                        <label for="timer-horas">Hours</label>
-                        <label for="timer-minutos">Minutes</label>
-                        <label for="timer-segundos">Seconds</label>
-                    </div>
-                    <div id="entrada-timer" class="entrada-timer">
-                        <input type="text" id="timer-horas" placeholder="00º" maxlength="4" autocomplete="off">
-                        <input type="text" id="timer-minutos" placeholder="00'" maxlength="2" autocomplete="off">
-                        <input type="text" id="timer-segundos" placeholder="00''" maxlength="2" autocomplete="off">
-                    </div>
-                    <span id="error-timer">ERRO</span>
-                    <div class="botoes">
-                        <input type="button" value="Start" id="btn-timer-start">
-                        <input type="button" value="Pause" id="btn-timer-pause">
-                        <input type="button" value="Stop" id="btn-timer-stop">
-                    </div>
-                </section>
+            <span id="error-timer">ERRO</span>
+            <div class="botoes">       
+                <button class="btn-start" id="btn-timer-start">
+                    <svg viewBox="0 0 163.861 163.861" class="btn-svg">
+                        <path
+                            d="M 34.857 3.613 C 20.084 -4.861 8.107 2.081 8.107 19.106 v 125.637 c 0 17.042 11.977 23.975 26.75 15.509 L 144.67 97.275 c 14.778 -8.477 14.778 -22.211 0 -30.686 L 34.857 3.613 Z" />
+                    </svg>
+                    <span class="btn-span" id="span-timer-start">Start</span>
+                </button>
+                <button class="btn-pause" id="btn-timer-pause">
+                    <svg viewBox="0 0 512 512" class="btn-svg">
+                        <path d="M181.333,0H74.667c-17.643,0-32,14.357-32,32v448c0,17.643,14.357,32,32,32h106.667c17.643,0,32-14.357,32-32V32
+                        C213.333,14.357,198.976,0,181.333,0z" />
+                        <path d="M437.333,0H330.667c-17.643,0-32,14.357-32,32v448c0,17.643,14.357,32,32,32h106.667c17.643,0,32-14.357,32-32V32
+                        C469.333,14.357,454.976,0,437.333,0z" />
+                    </svg>
+                    <span class="btn-span" id="span-timer-pause">Pause</span>
+                </button>
+
+                <button class="btn-stop" id="btn-timer-stop">
+                    <svg viewBox="0 0 33 33" class="btn-svg">
+                        <path d="M33,4.5v24c0,2.484-2.016,4.5-4.5,4.5h-24C2.016,33,0,30.984,0,28.5v-24C0,2.016,2.016,0,4.5,0h24
+                        C30.984,0,33,2.016,33,4.5z" />
+                    </svg>
+                    <span class="btn-span" id="span-timer-stop">Stop</span>
+                </button>
             </div>
-            <div class="aba" id="analog">
-                <section id="analog-section">
-                    <div class="analog"> 
-                        <div class="clock-analog hor-analog"></div>
-                        <div class="clock-analog min-analog"></div>
-                        <div class="clock-analog seg-analog"></div>
-                    </div>
-                </section>
-        </div>
+        </section>
+        <section class="aba" id="analog">
+            <div class="analog">
+                <div class="clock-analog hor-analog"></div>
+                <div class="clock-analog min-analog"></div>
+                <div class="clock-analog seg-analog"></div>
+            </div>
+        </section>
     </main>
     <footer>
         <a href="https://www.facebook.com/taisson.silveiradeoliveira" target="_blank" title="Facebook">

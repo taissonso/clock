@@ -1,26 +1,27 @@
+@font-face {
+    src: url('../fonts/digital-7.ttf');
+    font-family: 'principal';
+}
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 main {
-    flex-grow: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(185, 185, 185)e;
-}
-
-.container-conteudo {
-    background-color: tomato;
-    width: 60%;
-    height: 70vh;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
 }
 
 footer {
@@ -31,28 +32,36 @@ footer {
     background-color: #333333;
 }
 
-/* Elementos dos contêineres*/
-
+/* --- Titulo --- */
 h1 {
-    text-align: center;
-    padding: 10px 0 10px 0;
-    color:
+    font-family: 'principal';
+    font-size: 64px;
+    letter-spacing: 0.2em;
+    height: 100px;
+    line-height: 100px;
 }
 
+
+/* --- Menu com as Abas--- */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Espaçamento entre os links*/
-    background-color: aqua;
+    width: 60%;
+    background-color: #b0d9f8;
 }
 
 nav a {
-    background: red;
-    flex-grow: 1; /* Preenche o máximo de espaço possível*/
+    width: 25%;
+    border: 1px solid #000000;
     text-align: center;
     padding: 20px 0 20px 0;
-    border: 5px solid white;
-    border-collapse: collapse;
+    text-decoration: none;
+    color: #000000;
+    font-family: 'principal';
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    font-weight: bold;
 }
 
 /*Efeito ao passar o mouse */
@@ -60,88 +69,229 @@ nav a:hover {
     background-color: green;
 }
 
-/* Muda a cor ao clicar, vai ser usado para deixar a aba selecionada 
-por isso a criação da classe .aplicaFocus*/
+/* 
+    - Muda a cor ao clicar, vai ser usado para deixar a aba selecionada por isso a 
+      criação da classe .mudafocus
+*/
 nav a.mudafocus,
 nav a:focus {
-    background-color: aqua;
+    background-color: rgb(255, 0, 221);
 }
 
-/* --- Fazendo o conteúdo ficar oculto --- */
-.container-conteudo .aba{
-    display: none;
-    padding: 15px;
-}
 
-/* --- Mostrando o conteúdo quando clicar no link da aba*/
-.container-conteudo .aba:target {
-    display: flex;
-    background-color: aqua;
-    justify-content: center; 
-    height:70%;
-}
+/* --- Seções de cada Aba --- */
 
-/* --- Seções de cada relógio --- */
+/* 
+    - Deixa a seção oculta até ser clicada na sua respectiva aba 
+*/
 section {
+    display: none;
+    height: 60%;
+    width: 60%;
+    border: 1px solid #000000;
+    border-top: none;
+    background-color:  #ffffff;
+}
+
+/* --- Mostrando o conteúdo quando clicar na aba*/
+section:target {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    border: 1px solid #333333;
-}
-
-
-#section-digital {
-    align-items: center;
-    justify-content: center; 
-    font-size: 6vh;
-    color: #00ff00;
-    background-color: #333333;
-}
-
-#stopwatch-section , #timer-section {
-    align-items: center;
     justify-content: center;
+    background-color: #000000;
 }
 
-/* --- Botões de cada relógio --- */
-.botoes {
-    background-color: red;
+/* --- Contéudo das Seções --- */
+#digital h2, #stopwatch h2, #timer h2 {
+    font-family: 'principal';
+    color: #00ff00;
+    font-size: 5em;
 }
 
-/* --- input's e labels do timer --- */
-#entrada-timer, #timer-labels {
-    text-align: right;
+.entrada-timer {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.labels-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    text-transform: uppercase;
     width: 100%;
-    background-color: #00ff00;
 }
 
-#entrada-timer input {
-    width: 10%;
-    height: 30px;
+.labels-inputs label {
     text-align: center;
-    margin-left: 5px;
+    padding-bottom: 5px;
+    letter-spacing: 3px;
+}
+
+.labels-inputs input {
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    margin: auto;
+    border-radius: 9px;
+    border: none;
+}
+
+/* --- BOTÕES definindo um tamanho padrão*/
+.botoes {
+    display: flex;
+}
+
+.botoes button {
     box-sizing: border-box;
+    margin-right: 15px;
+    cursor: pointer;
+    border-radius: 25px;
 }
 
-#timer-labels label { 
-    width: 10%;
-    text-align: center;
-    margin-left: 5px;
+#stopwatch button {
+    margin-top: 28px;
 }
 
-/* --- Span de erro do timer--- */
+/* --- Botão Start --- */
+.btn-start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 4, 255);
+    width: 150px;
+    padding: 15px ;
+    border: none;
+    border-bottom: 6px solid  rgb(4, 126, 226);
+}
+
+.btn-start:hover{
+    background-color: rgb(4, 126, 226);
+    border-bottom-color: rgb(0, 4, 255);
+    color: #000000;
+}
+
+.btn-start:hover  > svg {
+    fill: #000000;
+}
+
+.btn-start:hover  > span{
+    color: #000000;
+    font-weight: bolder;
+}
+
+/* --- Botão Pause --- */
+.btn-pause{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(12, 122, 0);
+    width: 150px;
+    padding: 15px ;
+    border: none;
+    border-bottom: 6px solid rgb(20, 199, 0);
+}
+
+.btn-pause:hover{
+    background-color:   rgb(20, 199, 0);
+    border-bottom-color:  rgb(12, 122, 0);
+    color: #000000;
+}
+
+/* --- Botão Stop --- */
+.btn-stop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 0, 0);
+    width: 150px;
+    padding: 15px ;
+    border: none;
+    border-bottom: 6px solid rgb(245, 79, 79);
+}
+
+.btn-stop:hover{
+    background-color:    rgb(245, 79, 79);
+    border-bottom-color:   rgb(255, 0, 0);
+    color: #000000;
+}
+
+/* --- SVG dos botões --- */
+.btn-svg {
+    fill: #ffffff;
+    height: 25px;
+    width: 35px;
+}
+
+/* --- Span's dos botões --- */
+.btn-span {
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 10px;
+    line-height: 10px;
+}
+
+/* --- Erro do Timer */
 #error-timer {
+    color: #ff0000;
     visibility: hidden;
-    color: rgb(255, 0, 0);
-    text-align: center;
+    padding: 15px 0 15px 0;
 }
 
-/* --- H2 timer --- */
-#timer-tempo {
-    display: none;
-    text-align: center;
+
+/* --- Tira o focus dos botões --- */
+.botoes button:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
+@media screen and (max-width: 800px) {
+    body {
+        height: 100vh;
+    }
+    
+    main {
+        height: 100%;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav a {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 3.5vw;
+        padding: 15px;
+    }
+    
+    section {
+        height: 100%;
+        width: 100%;
+        border: none;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .labels-inputs label {
+        font-size: 16px;
+        letter-spacing: 0;
+    }
+    .labels-inputs input {
+        width: 80px;
+        height: 35px;
+        text-align: center;
+        margin: auto;
+        border-radius: 9px;
+        border: none;
+    }
+    
 }

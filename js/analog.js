@@ -35,7 +35,7 @@ function relogioAnalogico(){
     segAnalog.style.transform = `rotate(${segsAngulo}deg)`;
     segAnalog.style.transformOrigin = 'top';
 
-    /** Minutos e Horas parece não estar se posicionando corretamente. Vou deixar comentado aqui*/
+    /** Minutos e Horas parece não estar se posicionando corretamente. Vou deixar comentado aqui
     var minFracao = minu / 60;
     var minuAngulo = minFracao * 360;
     minAnalog.style.transform = `rotate(${minuAngulo}deg)`;
@@ -45,7 +45,7 @@ function relogioAnalogico(){
     var horaAngulo = horFracao * 360;
     horsAnalog.style.transform = `rotate(${horaAngulo}deg)`;
     horsAnalog.style.transformOrigin = 'top';
-
+*/
 }
 
 setInterval(relogioAnalogico, 1000);

@@ -40,7 +40,7 @@
   * - Depois da função chama uma variável com setInterval para ficar atualizando.
   */
  function relogioDigital() {
- 	var ondeEscrever = document.querySelector('section h1');
+ 	var ondeEscrever = document.querySelector('section h2');
 						
  	var data = new Date();
  	var hor = data.getHours();
