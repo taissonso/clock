@@ -243,12 +243,97 @@ section:target {
     padding: 15px 0 15px 0;
 }
 
+/* Modal Timer */
+
+#modal-timer {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 14;
+}
+
+.header-modal {
+    background-color: #000000;
+    width: 400px;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 32px;
+    font-weight: 900;
+    padding-right: 15px;
+    color: rgb(12, 122, 0);
+    border: 6px solid rgb(20, 199, 0);
+    border-bottom: none;
+    margin-top: 80px;
+}
+
+#close-x:hover,
+#close-x:focus {
+  color: rgb(20, 199, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.conteudo-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #000000;
+    width: 400px;
+    height: 200px;
+    padding-top: 20px;
+    border: 6px solid rgb(20, 199, 0);
+    border-top: none;
+}
+
+.conteudo-modal span {
+    color: rgb(20, 199, 0);
+    font-size: 42px;
+    font-family: 'principal';
+    letter-spacing: 4px;
+    padding: 20px;
+    text-decoration: underline;
+    margin-top: -50px;
+}
+
+.close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding: 15px ;
+    color: #ffffff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    background-color:   rgb(20, 199, 0);
+    border-bottom: 6px solid rgb(12, 122, 0);
+    margin-top: 20px;
+}
+
+.close:hover {
+    background-color: rgb(12, 122, 0);
+    border-bottom: 6px solid rgb(20, 199, 0);
+    color: #000000;
+    cursor: pointer;
+}
 
 /* --- Tira o focus dos botões --- */
-.botoes button:focus {
+.botoes button:focus, .close:focus {
     outline: 0px auto -webkit-focus-ring-color;
     outline-offset: 0px;
 }
+
 @media screen and (max-width: 800px) {
     body {
         height: 100vh;

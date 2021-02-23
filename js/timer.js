@@ -90,7 +90,25 @@ startTimer.addEventListener('click', () => {
         tempoTimer = setInterval(() => {
 
             if ((hors.value == 0) && (mins.value == 0) && (segs.value == 0)) {
-                alert('Contador parou!');
+                let modal = document.getElementById("modal-timer");
+                modal.style.display = "flex";
+
+                let span = document.getElementById("close-x");
+                span.addEventListener("click", ()=> { modal.style.display = "none"; });
+
+                let btnClose = document.getElementById("btn-close");
+                btnClose.addEventListener("click", ()=>{ modal.style.display = "none"; });
+
+                hors.value = '';
+                mins.value = '';
+                segs.value = '';
+                mostrarTimer.style.display = 'none';
+                document.querySelector('.entrada-timer').style.display = 'flex';
+                stopTimer.style.display = 'none';
+                pauseTimer.style.display = 'none';
+                document.getElementById('span-timer-start').innerHTML = 'Start';
+                startTimer.style.display = 'flex';
+                
                 clearInterval(tempoTimer);
             }
 
