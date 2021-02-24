@@ -1,47 +1,130 @@
-#analog-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#analog {
+    /* justify-content: center;
+    align-items: center; */
+    background-color: blue;
 }
 
 /* --- Define o tamanho e a forma do relógio --- */
-.analog {
+.analogico {
+    position: absolute;
+    z-index: 9999;
+    background: #ececec;
     width: 300px;
     height: 300px;
-    background-color: rgb(5, 94, 27);
+    /* margin: 8% auto 0; */
     border-radius: 50%;
-    position: relative;
+    border: 14px solid red;
+    box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,0.8);
 }
 
-/* --- Aplicando nas div's horas, minutos e segundos (que representa os ponteiros).
-       Deixando absolute para as divs ficarem em cima da div analog (que representa 
-       o circulo do relógio).
-       
-       Como movo todas as divs 50% com translateX eu alinho elas umas sobre as outras
-       ---*/
-.clock-analog {
-    position: absolute; 
-    left: 50%;      /*Move para a metade horizontal eixo(x) da div .analog do relogio*/
-    top: 50%;       /*Move para a metada vertical eixo(y) da div .analog do relogio*/
-    transform: translateX(-50%);
+.centro {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 2px 4px -1px black;
 }
 
-
-/* --- Estilo dos ponteiros --- */
-.hor-analog {
-    width: 10px;
-    height: 35%;
-    background-color: rgb(255, 230, 0);
+.ponteiro-horas {
+    position: absolute;
+    z-index: 10;
+    width: 4px;
+    height: 65px;
+    background: #333;
+    top: 69px;
+    transform-origin: 50% 69px;
+    left: 50%;
+    margin-left: -2px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
 }
 
-.min-analog {
-    width:5px;
-    height: 45%;
-    background-color: #ff0000;
+.ponteiro-minutos {
+    position: absolute;
+    z-index: 6;
+    width: 4px;
+    height: 100px;
+    background: #666;
+    top: 42px;
+    left: 50%;
+    margin-left: -2px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: 50% 95px;
 }
 
-.seg-analog {
-    width:2px;
-    height: 48%;
-    background-color:blue;
+.ponteiro-segundos {
+    position: absolute;
+    z-index: 7;
+    width: 2px;
+    height: 120px;
+    background: gold;
+    top: 22px;
+    lefT: 50%;
+    margin-left: -1px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: 50% 115px;
+}
+
+.numeros span {
+    display: inline-block;
+    position: absolute;
+    color: #333;
+    font-size: 22px;
+    font-weight: 700;
+    z-index: 9;
+}
+
+.hora-12 {
+    top: 30px;
+    left: 50%;
+    margin-left: -9px;
+}
+
+.hora-3 {
+    top: 120px;
+    right: 30px;
+}
+
+.hora-6 {
+    bottom: 30px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.hora-9 {
+    left: 32px;
+    top: 120px;
+}
+
+.linhas {
+    position: absolute;
+    z-index: 1;
+    width: 2px;
+    height: 25px;
+    background: #666;
+    left: 50%;
+    margin-left: -1px;
+    margin-top: -15px;
+    transform-origin: 50% 150px;
+}
+
+.linhas:nth-of-type(5n-1) {
+    position: absolute;
+    z-index: 1;
+    width: 4px;
+    height: 35px;
+    background: #666;
+    left: 50%;
+    margin-left: -1px;
+    margin-top: -15px;
+    transform-origin: 50% 150px;
 }
