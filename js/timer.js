@@ -5,7 +5,7 @@ var stopTimer = document.getElementById('btn-timer-stop');
 
 /** Para entrada inválida*/
 var erroTimer = document.getElementById('error-timer');
-erroTimer.innerHTML = '* Preencha um dos campos!';
+erroTimer.innerHTML = '*** Preencha um dos campos ***';
 
 /** Onde vai mostrar o timer */
 var mostrarTimer = document.getElementById('timer-tempo');

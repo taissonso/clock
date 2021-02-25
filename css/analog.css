@@ -1,20 +1,13 @@
-#analog {
-    /* justify-content: center;
-    align-items: center; */
-    background-color: blue;
-}
 
 /* --- Define o tamanho e a forma do relógio --- */
 .analogico {
     position: absolute;
-    z-index: 9999;
     background: #ececec;
     width: 300px;
     height: 300px;
-    /* margin: 8% auto 0; */
     border-radius: 50%;
-    border: 14px solid red;
-    box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,0.8);
+    border: 14px solid black;
+    box-shadow: 1vw 1vw 4vw -1vw rgba(255, 255, 255, 0.7), -1vw -1vw 4vw -1vw rgba(255, 255, 255, 0.5);
 }
 
 .centro {
@@ -37,7 +30,7 @@
     z-index: 10;
     width: 4px;
     height: 65px;
-    background: #333;
+    background: #000000;
     top: 69px;
     transform-origin: 50% 69px;
     left: 50%;
@@ -51,7 +44,7 @@
     z-index: 6;
     width: 4px;
     height: 100px;
-    background: #666;
+    background: #000000;
     top: 42px;
     left: 50%;
     margin-left: -2px;
@@ -65,7 +58,7 @@
     z-index: 7;
     width: 2px;
     height: 120px;
-    background: gold;
+    background: red;
     top: 22px;
     lefT: 50%;
     margin-left: -1px;
@@ -75,34 +68,35 @@
 }
 
 .numeros span {
+    font-family: 'principal';
     display: inline-block;
     position: absolute;
-    color: #333;
-    font-size: 22px;
+    color: #000000;
+    font-size: 36px;
     font-weight: 700;
     z-index: 9;
 }
 
 .hora-12 {
-    top: 30px;
+    top: 24px;
     left: 50%;
     margin-left: -9px;
 }
 
 .hora-3 {
-    top: 120px;
-    right: 30px;
+    top: 118px;
+    right: 26px;
 }
 
 .hora-6 {
-    bottom: 30px;
+    bottom: 26px;
     left: 50%;
-    margin-left: -5px;
+    margin-left: -8px;
 }
 
 .hora-9 {
-    left: 32px;
-    top: 120px;
+    left: 24px;
+    top: 118px;
 }
 
 .linhas {
@@ -110,11 +104,11 @@
     z-index: 1;
     width: 2px;
     height: 25px;
-    background: #666;
     left: 50%;
     margin-left: -1px;
     margin-top: -15px;
     transform-origin: 50% 150px;
+    background-image: linear-gradient(to bottom, rgb(12,122,0) 13px, black 17px);
 }
 
 .linhas:nth-of-type(5n-1) {
@@ -124,7 +118,8 @@
     height: 35px;
     background: #666;
     left: 50%;
-    margin-left: -1px;
-    margin-top: -15px;
+    margin-left: -3px;
+    margin-top: -14px;
     transform-origin: 50% 150px;
+    background-image: linear-gradient(to bottom, rgb(12,122,0) 13px, black 17px);
 }

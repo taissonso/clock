@@ -14,49 +14,54 @@ body {
     height: 100vh;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    background-color: #333333;
+}
+
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    justify-content: flex-start;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.700);
+    width: 100%;
 }
 
 footer {
     display: flex;
     align-items: center; /* Alinha os itens vertical */
     justify-content: space-evenly; /* Distribui os elementos na vertical com espaçamento */
-    height: 40px;
+    height: 15vh;
     background-color: #333333;
 }
 
 /* --- Titulo --- */
 h1 {
     font-family: 'principal';
-    font-size: 82px;
+    font-size: 8vw;
     letter-spacing: 0.2em;
     height: 100px;
-    line-height: 100px;
     color: #ffffff;
 }
-
 
 /* --- Menu com as Abas--- */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Espaçamento entre os links*/
-    width: 60%;
+    width: 100%;
+    height: 10vh;
     background-color: #b0d9f8;
-    border: 6px solid rgb(20, 199, 0);
     border-bottom: none;
 }
 
 nav a {
     width: 25%;
-    border: none;
     text-align: center;
     padding: 20px 0 20px 0;
     text-decoration: none;
@@ -65,23 +70,14 @@ nav a {
     font-size: 18px;
     letter-spacing: 0.3em;
     font-weight: bold;
-
-    /* border: 6px solid rgb(20, 199, 0);
-    border-bottom: none; */
 }
 
 /*Efeito ao passar o mouse */
 nav a:hover {
-    background-color: rgb(20, 199, 0);
-    /* border-bottom: 8px solid rgb(12, 122, 0); */
-    color: #ffffff;
     height: 100%;
-}
-
-nav a:hover::after {
-    content: " ";
-    background-color: rgb(20, 199, 0);
+    font-size: 26px;
     color: #ffffff;
+    background-color: rgb(20, 199, 0);
 }
 
 /* 
@@ -90,28 +86,26 @@ nav a:hover::after {
 */
 nav a.mudafocus,
 nav a:focus {
+    height: 100%;
+    font-size: 26px;
+    border: none;
+    color: #ffffff;
     background-color: rgb(12, 122, 0);
-    border-bottom: 8px solid rgb(12, 122, 0);
-    border-bottom-width: 20px;
-    border-bottom: 12px solid rgb(20, 199, 0);
+    border-bottom: 8px solid rgb(20, 199, 0); 
+    padding: 15px 0 20px 0;
 }
-
 
 /* --- Seções de cada Aba --- */
 .aba {
-    border: 6px solid rgb(20, 199, 0);
-    /* border-top: none; */
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
 }
 /* 
     - Deixa a seção oculta até ser clicada na sua respectiva aba 
 */
 section {
     display: none;
-    height: 60%;
-    width: 60%;
-    border: 1px solid #000000;
-    border-top: none;
-    background-color:  #ffffff;
 }
 
 /* --- Mostrando o conteúdo quando clicar na aba*/
@@ -120,18 +114,18 @@ section:target {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #000000;
+    border: 10px solid rgb(20, 199, 0);
 }
 
 /* --- Contéudo das Seções --- */
 #digital h2, #stopwatch h2, #timer h2 {
     font-family: 'principal';
     color: #00ff00;
-    font-size: 5em;
+    font-size: 10vw;
 }
 
 .entrada-timer {
-    width: 50%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,6 +135,8 @@ section:target {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: 'principal';
+    font-size: 24px;
     color: #ffffff;
     text-transform: uppercase;
     width: 100%;
@@ -152,12 +148,39 @@ section:target {
     letter-spacing: 3px;
 }
 
+::-webkit-input-placeholder{
+    font-family: 'principal';
+    font-size: 20px;
+    color: #000000;
+
+}
+
+:-moz-placeholder {
+    font-family: 'principal';
+    font-size: 20px;
+    color: #000000;
+}
+
+::-moz-placeholder {
+    font-family: 'principal';
+    font-size: 20px;
+    color: #000000;
+}
+
+:-ms-input-placeholder {
+    font-family: 'principal';
+    font-size: 20px;
+    color: #000000;
+}
+
 .labels-inputs input {
     width: 100px;
     height: 35px;
+    font-family: 'principal';
+    font-size: 20px;
     text-align: center;
     margin: auto;
-    border-radius: 9px;
+    border-radius: 5px;
     border: none;
 }
 
@@ -183,7 +206,7 @@ section:target {
     align-items: center;
     justify-content: center;
     background-color: rgb(0, 4, 255);
-    width: 150px;
+    width: 200px;
     padding: 15px ;
     border: none;
     border-bottom: 6px solid  rgb(4, 126, 226);
@@ -210,7 +233,7 @@ section:target {
     align-items: center;
     justify-content: center;
     background-color: rgb(12, 122, 0);
-    width: 150px;
+    width: 200px;
     padding: 15px ;
     border: none;
     border-bottom: 6px solid rgb(20, 199, 0);
@@ -228,8 +251,8 @@ section:target {
     align-items: center;
     justify-content: center;
     background-color: rgb(255, 0, 0);
-    width: 150px;
-    padding: 15px ;
+    width: 200px;
+    padding: 15px;
     border: none;
     border-bottom: 6px solid rgb(245, 79, 79);
 }
@@ -244,28 +267,32 @@ section:target {
 .btn-svg {
     fill: #ffffff;
     height: 25px;
-    width: 35px;
+    width: 50px;
 }
 
 /* --- Span's dos botões --- */
 .btn-span {
-    color: #ffffff;
-    font-size: 18px;
+    font-family: 'principal';
+    font-size: 26px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    color: #ffffff;
     height: 10px;
     line-height: 10px;
 }
 
 /* --- Erro do Timer */
 #error-timer {
+    font-family: 'principal';
+    font-size: 20px;
+    letter-spacing: 2px;
     color: #ff0000;
     visibility: hidden;
     padding: 15px 0 15px 0;
+    text-transform: uppercase;
 }
 
 /* Modal Timer */
-
 #modal-timer {
     display: none;
     align-items: center;
@@ -355,6 +382,7 @@ section:target {
     outline-offset: 0px;
 }
 
+/* --- Mobile --- */
 @media screen and (max-width: 800px) {
     body {
         height: 100vh;
@@ -387,10 +415,6 @@ section:target {
         font-size: 64px;
     }
 
-    .labels-inputs label {
-        font-size: 16px;
-        letter-spacing: 0;
-    }
     .labels-inputs input {
         width: 80px;
         height: 35px;
