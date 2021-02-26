@@ -5,16 +5,6 @@ let relogio = document.getElementsByClassName("analogico")[0];
 for (let i = 1; i < 60; i++) {
   relogio.innerHTML += "<div class='linhas'></div>";
   linhas[i].style.transform = "rotate(" + 6 * i + "deg)";
-//   linhas[i].style.transform = "rotate(" + 30 * i + "deg)";
-  
-//    if (i % 5){
-//        linhas[i].style.transform = "rotate(" + 6 * i + "deg)";
-//     console.log("VALOR DE i=" + i + ": --> "+ i % 5)
-//    } else {
-//        linhas[i].style.transform = "rotate(" + 30 * i + "deg)";
-//     console.log("VALOR DE PONTEIRO MAIOR " + i + ": --> "+ i % 5)
-//    }
-
 }
 
 

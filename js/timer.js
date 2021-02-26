@@ -81,8 +81,6 @@ startTimer.addEventListener('click', () => {
         hors.value = (hors.value == '' ? 0 : hors.value);
         mins.value = (mins.value == '' ? 0 : mins.value);
         segs.value = (segs.value == '' ? 0 : segs.value);
-
-
         
         formato = formataPadrao(hors.value, mins.value, segs.value);
         mostrarTimer.innerHTML = formato;

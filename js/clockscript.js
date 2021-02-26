@@ -9,7 +9,7 @@
  		if (location.hash) {
  			document.querySelector('a[href="' + location.hash + '"]').classList.add('mudafocus');
  		} else {
- 			location.hash = "#digital";
+ 			location.hash = "#analog";
  		}
  	})
  });
